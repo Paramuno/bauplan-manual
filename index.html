@@ -14544,98 +14544,6 @@
       font-size: var(--font-ui-medium);
       width: 100%;
     }
-
-    .choiceViewBottomBar.svelte-1ikpkxq {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 1rem;
-    }
-
-    @media (max-width: 800px) {
-      .choiceViewBottomBar.svelte-1ikpkxq {
-        flex-direction: column;
-      }
-    }
-
-    .choiceList.svelte-jb273g {
-      width: auto;
-      border: 0px solid black;
-      overflow-y: auto;
-      height: auto;
-    }
-
-    .rightButtonsContainer.svelte-a47k80 {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .clickable.svelte-a47k80:hover {
-      cursor: pointer;
-    }
-
-    .alignIconInDivInMiddle.svelte-a47k80 {
-      display: flex;
-      align-items: center;
-    }
-
-    .fa-icon.svelte-1mc5hvj {
-      display: inline-block;
-      fill: currentcolor;
-    }
-
-    .fa-flip-horizontal.svelte-1mc5hvj {
-      transform: scale(-1, 1);
-    }
-
-    .fa-flip-vertical.svelte-1mc5hvj {
-      transform: scale(1, -1);
-    }
-
-    .fa-spin.svelte-1mc5hvj {
-      animation: 1s linear 0s infinite normal none running svelte-1mc5hvj-fa-spin;
-    }
-
-    .fa-inverse.svelte-1mc5hvj {
-      color: rgb(255, 255, 255);
-    }
-
-    .fa-pulse.svelte-1mc5hvj {
-      animation: 1s steps(8) 0s infinite normal none running svelte-1mc5hvj-fa-spin;
-    }
-
-    @keyframes svelte-1mc5hvj-fa-spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .addChoiceBox.svelte-1newuee {
-      margin-top: 1em;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    @media (max-width: 800px) {
-      .addChoiceBox.svelte-1newuee {
-        flex-direction: column;
-      }
-    }
-
-    #addChoiceTypeSelector.svelte-1newuee {
-      font-size: 16px;
-      padding: 3px;
-      border-radius: 3px;
-    }
   </style>
   <style>
     body.css-settings-manager {
@@ -24512,6 +24420,179 @@ settings:
     }
 
     /*#endregion */
+    /* @settings
+
+name: Buttons
+id: buttons-styles
+settings:
+    - 
+        id: button-background
+        title: Background
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#f5f6f8'
+        default-dark: '#1b1b1b'
+    - 
+        id: button-text
+        title: Text
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#1b1b1b'
+        default-dark: '#f5f6f8'
+    - 
+        id: button-border
+        title: Border
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#7a9486'
+        default-dark: '#84a83a'
+    - 
+        id: button-box-shadow
+        title: Box Shadow
+        type: variable-themed-color
+        format: rgb
+        opacity: true
+        default-light: '#1b1b1b'
+        default-dark: '#f5f6f8'
+    -
+        id: button-border-radius
+        title: Border Radius
+        type: variable-number
+        format: px
+        default: 5
+    -
+        id: button-size
+        title: Font Size
+        type: variable-number
+        format: em
+        default: 1
+
+*/
+
+    .block-language-button {
+      padding: 5px;
+    }
+
+    button.button-default {
+      border: 0.5px solid var(--button-border, #7a9486);
+      border-radius: var(--button-border-radius, 5px);
+      background-color: var(--button-background);
+      padding: 10px 30px;
+      color: var(--button-text);
+      text-decoration: none;
+      font-size: var(--button-size);
+      margin: 0 5px;
+      box-shadow: 0 1px 3px var(--button-box-shadow, rgba(0, 0, 0, 0.12)),
+        0 1px 2px var(--button-box-shadow, rgba(0, 0, 0, 0.24));
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    button.button-default:hover {
+      z-index: 100;
+      box-shadow: 0 4px 4px var(--button-box-shadow, rgba(0, 0, 0, 0.25)),
+        0 10px 10px var(--button-box-shadow, rgba(0, 0, 0, 0.22));
+      transform: translate3d(0px, -1.5px, 0px);
+      background-color: var(--button-background);
+    }
+
+    .theme-dark button.button-default {
+      border: 0.5px solid var(--button-border, #84a83a);
+    }
+
+    .theme-dark button.button-default:hover {
+      z-index: 100;
+      box-shadow: 0 4px 4px var(--button-box-shadow, rgba(210, 210, 210, 0.25)),
+        0 10px 10px var(--button-box-shadow, rgba(210, 210, 210, 0.22));
+      transform: translate3d(0px, -1.5px, 0px);
+    }
+
+    button.button-inline {
+      width: unset;
+      height: unset;
+      padding: 0 8px;
+    }
+
+    button.blue {
+      background: #76b3fa;
+      color: black;
+    }
+
+    button.red {
+      background-color: red;
+    }
+
+    button.green {
+      background: green;
+    }
+
+    button.yellow {
+      background: yellow;
+      color: black;
+    }
+
+    button.purple {
+      background: #725585;
+    }
+
+    button.blue:hover {
+      background: #76b3fa;
+      color: black;
+    }
+
+    button.red:hover {
+      background: red;
+    }
+
+    button.green:hover {
+      background: green;
+    }
+
+    button.yellow:hover {
+      background: yellow;
+      color: black;
+    }
+
+    button.purple:hover {
+      background: #725585;
+    }
+
+    .button-maker {
+      max-width: 35rem;
+      width: 35rem;
+      overflow-y: auto;
+      max-height: 30rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      overflow-x: hidden;
+    }
+
+    /*Icon Picker*/
+    .URI-icon {
+      transform: translateY(3px);
+      margin-right: 8px;
+    }
+
+    .URI-icon-container {
+      display: flex;
+    }
+
+    .URI-settings-icon {
+      height: 20px;
+      margin-right: 0.5rem;
+      transform: translateY(2px);
+    }
+
+    .URI-flex {
+      display: flex;
+    }
+
+    .URI-flex-center {
+      display: flex;
+      place-content: center;
+    }
   </style>
 
   <!-- Snippets -->
@@ -25395,7 +25476,8 @@ div[data-path$='.png']{
 
     .markdown-rendered .cm-fold-indicator .collapse-indicator,
     .collapse-icon {
-      display: flex;
+      opacity: 1;
+      display: block;
     }
 
     /* .markdown-source-view.mod-cm6 .cm-editor { */
@@ -26312,10 +26394,18 @@ div[data-path$='.png']{
 
 </head>
 
-<body class="mod-windows is-frameless is-hidden-frameless obsidian-app contextual-typography hider-ribbon hider-scroll outliner-plugin-dnd css-settings-manager minimal-theme minimal-dracula-dark minimal-default-light colorful-headings img-grid minimal-status-off minimal-folding minimal-line-nums minimal-readable-off minimal-light minimal-dark chart-wide table-default-width img-wide iframe-default-width map-default-width obsidian-themepocalypse style-check-box unified-cm-highlighting hider-tabs is-maximized theme-dark cm-theme-custom qe-title-right pane-relief-pane-numbering pane-relief-disable-counts callouts-outlined trim-cols checkbox-square pdf-seamless-on pdf-invert-dark pdf-blend-light sidebar-tabs-index maximize-tables-auto col-lines table-numbers row-hover tabs-modern tab-stack-center-flipped minimal-tab-title-hover" style="--zoom-factor:1; --accent-h:339; --accent-s:49%; --accent-l:46%; --font-interface-override:Bahnschrift; --font-text-override:Orienta, MonoLisa; --font-print-override:Orienta, MonoLisa; --font-monospace-override:Gintroniclisa, Gintronic, Monolisa; --font-text-size:15px; --line-width:50em; --line-width-adaptive:50em; --file-line-width:50em; --content-width:500em; --sidebar-width:25em; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;">
+<body class="theme-dark mod-windows is-frameless is-hidden-frameless obsidian-app is-maximized contextual-typography hider-ribbon hider-tabs hider-scroll outliner-plugin-dnd css-settings-manager minimal-theme minimal-dracula-dark minimal-default-light colorful-headings img-grid minimal-status-off minimal-folding minimal-line-nums minimal-readable-off minimal-light minimal-dark chart-wide table-default-width img-wide iframe-default-width map-default-width obsidian-themepocalypse style-check-box unified-cm-highlighting cm-theme-custom qe-title-right pane-relief-pane-numbering pane-relief-disable-counts callouts-outlined trim-cols checkbox-square pdf-seamless-on pdf-invert-dark pdf-blend-light sidebar-tabs-index maximize-tables-auto col-lines table-numbers row-hover tabs-modern tab-stack-center-flipped minimal-tab-title-hover" style="--zoom-factor:1; --accent-h:339; --accent-s:49%; --accent-l:46%; --font-interface-override:Bahnschrift; --font-text-override:Orienta, MonoLisa; --font-print-override:Orienta, MonoLisa; --font-monospace-override:Gintroniclisa, Gintronic, Monolisa; --font-text-size:15px; --line-width:50em; --line-width-adaptive:50em; --file-line-width:50em; --content-width:500em; --sidebar-width:25em; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;">
   <div class="webpage-container">
     <div class="sidebar-left sidebar">
-      <div class="sidebar-content"></div>
+      <div class="sidebar-content">
+        <div><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle">
+            <div class="toggle-background"></div>
+          </label></div>
+        <div class="tree-container file-tree mod-nav-indicator" data-depth="0">
+          <div class="tree-header"><span class="sidebar-section-header">Saturation</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
+          <div class="tree-scroll-area"></div>
+        </div>
+      </div>
     </div>
     <div class="document-container">
       <div class="markdown-preview-view markdown-rendered node-insert-event allow-fold-headings show-indentation-guide show-frontmatter" style="tab-size: 4;">
@@ -26325,8 +26415,15 @@ div[data-path$='.png']{
           <div class="mod-header">
             <div class="inline-title" contenteditable="true" spellcheck="false" autocapitalize="on" tabindex="-1" enterkeyhint="done">Bauplan manual</div>
           </div>
-          <div data-heading="Premisas" data-tag-name="h1" class="el-h1 is-collapsed">
-            <h1 data-heading="Premisas" id="Premisas">Premisas</h1>
+          <div data-heading="Bauplan manual" data-tag-name="h1" class="el-h1">
+            <h1 data-heading="Bauplan manual" id="Bauplan_manual">Bauplan manual</h1>
+          </div>
+          <div data-heading="Premisas" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Premisas" id="Premisas" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Premisas
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26358,8 +26455,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Modalidades de juego" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Modalidades de juego" id="Modalidades_de_juego">Modalidades de juego</h1>
+          <div data-heading="Modalidades de juego" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Modalidades de juego" id="Modalidades_de_juego" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Modalidades de juego
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26400,15 +26501,19 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Participantes" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Participantes" id="Participantes">Participantes</h1>
+          <div data-heading="Participantes" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Participantes" id="Participantes" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Participantes
+            </h2>
           </div>
-          <div data-heading="Medium" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Medium" id="Medium" style="display: flex;">
+          <div data-heading="Medium" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Medium" id="Medium" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Medium
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26443,12 +26548,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Pneuma" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Pneuma" id="Pneuma" style="display: flex;">
+          <div data-heading="Pneuma" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Pneuma" id="Pneuma" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Pneuma
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26472,12 +26577,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Artefacto" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Artefacto" id="Artefacto" style="display: flex;">
+          <div data-heading="Artefacto" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Artefacto" id="Artefacto" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Artefacto
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26514,8 +26619,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Condiciones iniciales" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Condiciones iniciales" id="Condiciones_iniciales">Condiciones iniciales</h1>
+          <div data-heading="Condiciones iniciales" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Condiciones iniciales" id="Condiciones_iniciales" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Condiciones iniciales
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26580,15 +26689,19 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Mecánicas básicas" data-tag-name="h1" class="el-h1 is-collapsed">
-            <h1 data-heading="Mecánicas básicas" id="Mecánicas_básicas">Mecánicas básicas</h1>
+          <div data-heading="Mecánicas básicas" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Mecánicas básicas" id="Mecánicas_básicas" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Mecánicas básicas
+            </h2>
           </div>
-          <div data-heading="Prácticas en desarrollo constante" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Prácticas en desarrollo constante" id="Prácticas_en_desarrollo_constante" style="display: flex;">
+          <div data-heading="Prácticas en desarrollo constante" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Prácticas en desarrollo constante" id="Prácticas_en_desarrollo_constante" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Prácticas en desarrollo constante
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26597,12 +26710,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Prácticas en desarrollo intermitente" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Prácticas en desarrollo intermitente" id="Prácticas_en_desarrollo_intermitente" style="display: flex;">
+          <div data-heading="Prácticas en desarrollo intermitente" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Prácticas en desarrollo intermitente" id="Prácticas_en_desarrollo_intermitente" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Prácticas en desarrollo intermitente
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26623,12 +26736,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Prácticas ceremoniales (secuenciales)" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Prácticas ceremoniales (secuenciales)" id="Prácticas_ceremoniales_(secuenciales)" style="display: flex;">
+          <div data-heading="Prácticas ceremoniales (secuenciales)" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Prácticas ceremoniales (secuenciales)" id="Prácticas_ceremoniales_(secuenciales)" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Prácticas ceremoniales (secuenciales)
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26693,12 +26806,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Acciones del encuentro" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Acciones del encuentro" id="Acciones_del_encuentro" style="display: flex;">
+          <div data-heading="Acciones del encuentro" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Acciones del encuentro" id="Acciones_del_encuentro" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Acciones del encuentro
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26707,8 +26820,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Escenarios" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Escenarios" id="Escenarios">Escenarios</h1>
+          <div data-heading="Escenarios" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Escenarios" id="Escenarios" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Escenarios
+            </h2>
           </div>
           <div data-tag-name="blockquote" class="el-blockquote">
             <blockquote>
@@ -26850,8 +26967,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Minimapa / locación" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Minimapa / locación" id="Minimapa_/_locación">Minimapa / locación</h1>
+          <div data-heading="Minimapa / locación" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Minimapa / locación" id="Minimapa_/_locación" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Minimapa / locación
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26891,12 +27012,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Nombramiento" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Nombramiento" id="Nombramiento" style="display: flex;">
+          <div data-heading="Nombramiento" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Nombramiento" id="Nombramiento" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Nombramiento
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26905,15 +27026,19 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Morfoscopio" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Morfoscopio" id="Morfoscopio">Morfoscopio</h1>
+          <div data-heading="Morfoscopio" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Morfoscopio" id="Morfoscopio" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Morfoscopio
+            </h2>
           </div>
-          <div data-heading="Funcionamiento" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Funcionamiento" id="Funcionamiento" style="display: flex;">
+          <div data-heading="Funcionamiento" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Funcionamiento" id="Funcionamiento" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Funcionamiento
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26936,12 +27061,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Rasgos de la creatura" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Rasgos de la creatura" id="Rasgos_de_la_creatura" style="display: flex;">
+          <div data-heading="Rasgos de la creatura" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Rasgos de la creatura" id="Rasgos_de_la_creatura" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Rasgos de la creatura
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -26976,12 +27101,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Población" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Población" id="Población" style="display: flex;">
+          <div data-heading="Población" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Población" id="Población" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Población
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27001,12 +27126,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Proliferación / Decrecimiento" data-tag-name="h2" class="el-h2 is-collapsed">
-            <h2 data-heading="Proliferación / Decrecimiento" id="Proliferación_/_Decrecimiento" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon is-collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <div data-heading="Proliferación / Decrecimiento" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Proliferación / Decrecimiento" id="Proliferación_/_Decrecimiento" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Proliferación / Decrecimiento
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27026,12 +27151,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Especiación" data-tag-name="h2" class="el-h2 is-collapsed">
-            <h2 data-heading="Especiación" id="Especiación" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon is-collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <div data-heading="Especiación" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Especiación" id="Especiación" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Especiación
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27040,12 +27165,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Extinción" data-tag-name="h2" class="el-h2">
-            <h2 data-heading="Extinción" id="Extinción" style="display: flex;">
+          <div data-heading="Extinción" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Extinción" id="Extinción" style="display: flex;">
               <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Extinción
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27057,15 +27182,19 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Elementos de jugabilidad" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Elementos de jugabilidad" id="Elementos_de_jugabilidad">Elementos de jugabilidad</h1>
+          <div data-heading="Elementos de jugabilidad" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Elementos de jugabilidad" id="Elementos_de_jugabilidad" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Elementos de jugabilidad
+            </h2>
           </div>
-          <div data-heading="Recursos" data-tag-name="h2" class="el-h2 is-collapsed">
-            <h2 data-heading="Recursos" id="Recursos" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon is-collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <div data-heading="Recursos" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Recursos" id="Recursos" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Recursos
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27108,12 +27237,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Bonanzas y debilitaciones" data-tag-name="h2" class="el-h2 is-collapsed">
-            <h2 data-heading="Bonanzas y debilitaciones" id="Bonanzas_y_debilitaciones" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon is-collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <div data-heading="Bonanzas y debilitaciones" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Bonanzas y debilitaciones" id="Bonanzas_y_debilitaciones" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Bonanzas y debilitaciones
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27125,12 +27254,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Efectos globales" data-tag-name="h2" class="el-h2 is-collapsed">
-            <h2 data-heading="Efectos globales" id="Efectos_globales" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon is-collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <div data-heading="Efectos globales" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Efectos globales" id="Efectos_globales" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Efectos globales
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27139,12 +27268,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Relaciones multiespecie" data-tag-name="h2" class="el-h2 is-collapsed">
-            <h2 data-heading="Relaciones multiespecie" id="Relaciones_multiespecie" style="display: flex;">
-              <div class="heading-collapse-indicator collapse-indicator collapse-icon is-collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+          <div data-heading="Relaciones multiespecie" data-tag-name="h3" class="el-h3">
+            <h3 data-heading="Relaciones multiespecie" id="Relaciones_multiespecie" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                   <path d="M3 8L12 17L21 8"></path>
                 </svg></div>Relaciones multiespecie
-            </h2>
+            </h3>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27225,8 +27354,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Árbol de relaciones vivientes" data-tag-name="h1" class="el-h1 is-collapsed">
-            <h1 data-heading="Árbol de relaciones vivientes" id="Árbol_de_relaciones_vivientes">Árbol de relaciones vivientes</h1>
+          <div data-heading="Árbol de relaciones vivientes" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Árbol de relaciones vivientes" id="Árbol_de_relaciones_vivientes" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Árbol de relaciones vivientes
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27255,8 +27388,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Eventos" data-tag-name="h1" class="el-h1 is-collapsed">
-            <h1 data-heading="Eventos" id="Eventos">Eventos</h1>
+          <div data-heading="Eventos" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Eventos" id="Eventos" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Eventos
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27339,8 +27476,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Ciclos continuos" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Ciclos continuos" id="Ciclos_continuos">Ciclos continuos</h1>
+          <div data-heading="Ciclos continuos" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Ciclos continuos" id="Ciclos_continuos" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Ciclos continuos
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27442,8 +27583,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Lenguaje de nudos" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Lenguaje de nudos" id="Lenguaje_de_nudos">Lenguaje de nudos</h1>
+          <div data-heading="Lenguaje de nudos" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Lenguaje de nudos" id="Lenguaje_de_nudos" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Lenguaje de nudos
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27463,8 +27608,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Bestiario" data-tag-name="h1" class="el-h1 is-collapsed">
-            <h1 data-heading="Bestiario" id="Bestiario">Bestiario</h1>
+          <div data-heading="Bestiario" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Bestiario" id="Bestiario" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Bestiario
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27484,8 +27633,12 @@ div[data-path$='.png']{
               </li>
             </ul>
           </div>
-          <div data-heading="Elementos tentativos" data-tag-name="h1" class="el-h1">
-            <h1 data-heading="Elementos tentativos" id="Elementos_tentativos">Elementos tentativos</h1>
+          <div data-heading="Elementos tentativos" data-tag-name="h2" class="el-h2">
+            <h2 data-heading="Elementos tentativos" id="Elementos_tentativos" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Elementos tentativos
+            </h2>
           </div>
           <div data-tag-name="ul" class="el-ul">
             <ul class="has-list-bullet">
@@ -27523,141 +27676,166 @@ div[data-path$='.png']{
           <div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
           <div class="tree-scroll-area">
             <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Premisas"><span class="tree-item-title">Premisas</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Modalidades_de_juego"><span class="tree-item-title">Modalidades de juego</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Participantes"><span class="tree-item-title">Participantes</span></a></div>
+              <div class="tree-item-contents"><a class="tree-item-link" href="#Bauplan_manual"><span class="tree-item-title">Bauplan manual</span></a></div>
               <div class="tree-item-children">
                 <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Medium"><span class="tree-item-title">Medium</span></a></div>
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Premisas"><span class="tree-item-title">Premisas</span></a></div>
                   <div class="tree-item-children"></div>
                 </div>
                 <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Pneuma"><span class="tree-item-title">Pneuma</span></a></div>
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Modalidades_de_juego"><span class="tree-item-title">Modalidades de juego</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="#Participantes"><span class="tree-item-title">Participantes</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Medium"><span class="tree-item-title">Medium</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Pneuma"><span class="tree-item-title">Pneuma</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Artefacto"><span class="tree-item-title">Artefacto</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Condiciones_iniciales"><span class="tree-item-title">Condiciones iniciales</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="#Mecánicas_básicas"><span class="tree-item-title">Mecánicas básicas</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Prácticas_en_desarrollo_constante"><span class="tree-item-title">Prácticas en desarrollo constante</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Prácticas_en_desarrollo_intermitente"><span class="tree-item-title">Prácticas en desarrollo intermitente</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Prácticas_ceremoniales_(secuenciales)"><span class="tree-item-title">Prácticas ceremoniales (secuenciales)</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Acciones_del_encuentro"><span class="tree-item-title">Acciones del encuentro</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Escenarios"><span class="tree-item-title">Escenarios</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="#Minimapa_/_locación"><span class="tree-item-title">Minimapa / locación</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Nombramiento"><span class="tree-item-title">Nombramiento</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="#Morfoscopio"><span class="tree-item-title">Morfoscopio</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Funcionamiento"><span class="tree-item-title">Funcionamiento</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Rasgos_de_la_creatura"><span class="tree-item-title">Rasgos de la creatura</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Población"><span class="tree-item-title">Población</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Proliferación_/_Decrecimiento"><span class="tree-item-title">Proliferación / Decrecimiento</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Especiación"><span class="tree-item-title">Especiación</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Extinción"><span class="tree-item-title">Extinción</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="#Elementos_de_jugabilidad"><span class="tree-item-title">Elementos de jugabilidad</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Recursos"><span class="tree-item-title">Recursos</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Bonanzas_y_debilitaciones"><span class="tree-item-title">Bonanzas y debilitaciones</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Efectos_globales"><span class="tree-item-title">Efectos globales</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#Relaciones_multiespecie"><span class="tree-item-title">Relaciones multiespecie</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Árbol_de_relaciones_vivientes"><span class="tree-item-title">Árbol de relaciones vivientes</span></a></div>
                   <div class="tree-item-children"></div>
                 </div>
                 <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Artefacto"><span class="tree-item-title">Artefacto</span></a></div>
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Eventos"><span class="tree-item-title">Eventos</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Ciclos_continuos"><span class="tree-item-title">Ciclos continuos</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Lenguaje_de_nudos"><span class="tree-item-title">Lenguaje de nudos</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Bestiario"><span class="tree-item-title">Bestiario</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#Elementos_tentativos"><span class="tree-item-title">Elementos tentativos</span></a></div>
                   <div class="tree-item-children"></div>
                 </div>
               </div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Condiciones_iniciales"><span class="tree-item-title">Condiciones iniciales</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Mecánicas_básicas"><span class="tree-item-title">Mecánicas básicas</span></a></div>
-              <div class="tree-item-children">
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Prácticas_en_desarrollo_constante"><span class="tree-item-title">Prácticas en desarrollo constante</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Prácticas_en_desarrollo_intermitente"><span class="tree-item-title">Prácticas en desarrollo intermitente</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Prácticas_ceremoniales_(secuenciales)"><span class="tree-item-title">Prácticas ceremoniales (secuenciales)</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Acciones_del_encuentro"><span class="tree-item-title">Acciones del encuentro</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-              </div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Escenarios"><span class="tree-item-title">Escenarios</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Minimapa_/_locación"><span class="tree-item-title">Minimapa / locación</span></a></div>
-              <div class="tree-item-children">
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Nombramiento"><span class="tree-item-title">Nombramiento</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-              </div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Morfoscopio"><span class="tree-item-title">Morfoscopio</span></a></div>
-              <div class="tree-item-children">
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Funcionamiento"><span class="tree-item-title">Funcionamiento</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Rasgos_de_la_creatura"><span class="tree-item-title">Rasgos de la creatura</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Población"><span class="tree-item-title">Población</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Proliferación_/_Decrecimiento"><span class="tree-item-title">Proliferación / Decrecimiento</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Especiación"><span class="tree-item-title">Especiación</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Extinción"><span class="tree-item-title">Extinción</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-              </div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Elementos_de_jugabilidad"><span class="tree-item-title">Elementos de jugabilidad</span></a></div>
-              <div class="tree-item-children">
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Recursos"><span class="tree-item-title">Recursos</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Bonanzas_y_debilitaciones"><span class="tree-item-title">Bonanzas y debilitaciones</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Efectos_globales"><span class="tree-item-title">Efectos globales</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-                <div class="tree-item mod-tree-heading" data-depth="2">
-                  <div class="tree-item-contents"><a class="tree-item-link" href="#Relaciones_multiespecie"><span class="tree-item-title">Relaciones multiespecie</span></a></div>
-                  <div class="tree-item-children"></div>
-                </div>
-              </div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Árbol_de_relaciones_vivientes"><span class="tree-item-title">Árbol de relaciones vivientes</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Eventos"><span class="tree-item-title">Eventos</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Ciclos_continuos"><span class="tree-item-title">Ciclos continuos</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Lenguaje_de_nudos"><span class="tree-item-title">Lenguaje de nudos</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Bestiario"><span class="tree-item-title">Bestiario</span></a></div>
-              <div class="tree-item-children"></div>
-            </div>
-            <div class="tree-item mod-tree-heading" data-depth="1">
-              <div class="tree-item-contents"><a class="tree-item-link" href="#Elementos_tentativos"><span class="tree-item-title">Elementos tentativos</span></a></div>
-              <div class="tree-item-children"></div>
             </div>
           </div>
         </div>
