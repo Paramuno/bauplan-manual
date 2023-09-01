@@ -24625,81 +24625,6 @@ settings:
 
 
     /* --- blockquotefont.css --- */
-    /* Hides external links in source mode */
-    .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
-      font-size: 0;
-    }
-
-
-
-    .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::after {
-      content: "🔗";
-      font-size: calc(var(--font-text-size) * 0.9);
-      position: relative;
-      /* top: 2px; */
-    }
-
-    /* remove external link icon */
-    /* .external-link {
-	background-image: none;
-	padding-right: 0;
-} */
-
-    /* put fold arrows to the right for proper alignment, https://github.com/kevboh/longform/issues/140
-body #scene-list .scene-container {
-	display: flex;
-	flex-direction: row-reverse;
-}
-
-body #scene-list .scene-container div {
-	margin-right: 4px;
-	margin-left: 0;
-} */
-
-
-    /* --- headerandblockquotefont.css --- */
-    /* Hides the window frame buttons */
-
-    body .titlebar-button.mod-minimize,
-    body .titlebar-button.mod-maximize,
-    body .titlebar-button.mod-close {
-      display: none;
-    }
-
-
-    .block-language-dataview {
-      display: block;
-      max-height: 5t00px;
-      overflow: auto;
-    }
-
-    .block-language-dataviewjs {
-      display: block;
-      height: 500px;
-      overflow: auto;
-    }
-
-
-    /* --- imgCenter.css --- */
-    /* Hides the Vaults Title */
-
-    .nav-folder.mod-root>.nav-folder-title .nav-folder-title-content {
-      display: none;
-      color: var(--text-muted);
-      font-size: var(--small-font-size);
-      text-transform: uppercase;
-      margin-left: -2px;
-    }
-
-    .nav-folder.mod-root>.nav-folder-title:hover {
-      color: none;
-      cursor: pointer;
-    }
-
-
-
-
-    /* --- Typography fix.css --- */
     /* Fixes the position of the Quickexplorer */
     .menu.qe-popup-menu {
       left: 60% !important;
@@ -24710,7 +24635,7 @@ body #scene-list .scene-container div {
 
 
 
-    /* --- BCommandpaletteFix.css --- */
+    /* --- headerandblockquotefont.css --- */
     /* Hide the status icon */
     /* .status-bar > .status-bar-item.plugin-obsidian-vimrc-support {
   display: none;
@@ -24789,32 +24714,7 @@ body #scene-list .scene-container div {
 
 
 
-    /* --- fatcursor.css --- */
-
-    /* Hide particular folder */
-    div[data-path$='Scripts'],
-    div[data-path$='Scripts']+div.nav-folder-children {
-      display: none;
-    }
-
-    div[data-path$='Files'],
-    div[data-path$='Files']+div.nav-folder-children {
-      display: none;
-    }
-
-    div[data-path$='Templates'],
-    div[data-path$='Templates']+div.nav-folder-children {
-      display: none;
-    }
-
-    /* Hide an extension
-div[data-path$='.png']{
-	display: none;
-} */
-
-
-
-    /* --- hideexternallinks-sourcemode.css --- */
+    /* --- imgCenter.css --- */
     /* .status-bar,
 .is-translucent .status-bar {
   background-color: var(--background-secondary-alt);
@@ -24885,7 +24785,7 @@ div[data-path$='.png']{
     }
 
 
-    /* --- hidemaximizebutton.css --- */
+    /* --- Typography fix.css --- */
     .reveal {
       font-size: 2em;
     }
@@ -24931,7 +24831,7 @@ div[data-path$='.png']{
     }
 
 
-    /* --- hidevaulttitle.css --- */
+    /* --- BCommandpaletteFix.css --- */
     .cm-header-1,
     .cm-header-2,
     .cm-header-3,
@@ -24965,6 +24865,8 @@ div[data-path$='.png']{
       font-family: var(--font-monospace)
     }
 
+
+
     /* Blockquote customization */
     .markdown-source-view.cm-s-obsidian span.cm-quote {
       font-size: .8REM;
@@ -24976,21 +24878,46 @@ div[data-path$='.png']{
       /* font-feature-settings: "ss02"; */
     }
 
+    .markdown-rendered blockquote {
+      font-size: .8REM;
+      font-family: "Monolisa";
+      font-weight: 600;
+      font-style: italic;
+      color: #218AA4;
+    }
+
     /* Italics customization */
     .markdown-source-view.cm-s-obsidian .cm-em {
       font-size: .79REM;
       font-family: "Monolisa";
       font-feature-settings: "ss02";
       /* Style set 2 is script */
+    }
 
+    i,
+    em {
+      font-size: .79REM;
+      font-family: "Monolisa";
+      font-feature-settings: "ss02";
+      /* Style set 2 is script */
     }
 
     /* Bold customization */
     .markdown-source-view.cm-s-obsidian .cm-strong {
-      font-size: .79REM;
-      font-family: "Alverata";
+      font-size: .83rem;
+      font-family: "alverata";
       font-feature-settings: "ss02";
-      /* Style set 2 is script */
+      /* style set 2 is script */
+      color: var(--h3-color);
+    }
+
+    b,
+    strong {
+      font-size: .83rem;
+      font-family: "alverata";
+      font-feature-settings: "ss02";
+      /* style set 2 is script */
+      color: var(--h3-color);
     }
 
     /* Inline code customization  */
@@ -25006,7 +24933,7 @@ div[data-path$='.png']{
 } */
 
 
-    /* --- Quickexplorerfix.css --- */
+    /* --- fatcursor.css --- */
     /*
     Custom tag styles
     https://github.com/replete/obsidian-minimal-theme-css-snippets
@@ -25138,7 +25065,7 @@ div[data-path$='.png']{
     }
 
 
-    /* --- vimmodeindicator.css --- */
+    /* --- Quickexplorerfix.css --- */
 
     /*
     Compact File Explorer
@@ -25270,7 +25197,7 @@ div[data-path$='.png']{
     }
 
 
-    /* --- checkbox-styles.css --- */
+    /* --- vimmodeindicator.css --- */
     /*============bigger image preview  ================*/
     /* .markdown-preview-view img {
   display: block;
@@ -25305,7 +25232,7 @@ div[data-path$='.png']{
 
 
 
-    /* --- Hidefolders.css --- */
+    /* --- checkbox-styles.css --- */
     .tlfFileInfoValue {
       font-size: 0.9em;
       padding-top: .1em;
@@ -25335,6 +25262,106 @@ div[data-path$='.png']{
 
 
     /* --- peekingstatusbar.css --- */
+    /* Hides external links in source mode */
+    .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting) {
+      font-size: 0;
+    }
+
+
+
+    .cm-s-obsidian:not(.is-live-preview) .cm-line:not(.cm-active) .cm-string.cm-url:not(.cm-formatting)::after {
+      content: "🔗";
+      font-size: calc(var(--font-text-size) * 0.9);
+      position: relative;
+      /* top: 2px; */
+    }
+
+    /* remove external link icon */
+    /* .external-link {
+	background-image: none;
+	padding-right: 0;
+} */
+
+    /* put fold arrows to the right for proper alignment, https://github.com/kevboh/longform/issues/140
+body #scene-list .scene-container {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+body #scene-list .scene-container div {
+	margin-right: 4px;
+	margin-left: 0;
+} */
+
+
+    /* --- Slidesstyles.css --- */
+
+    /* Hide particular folder */
+    div[data-path$='Scripts'],
+    div[data-path$='Scripts']+div.nav-folder-children {
+      display: none;
+    }
+
+    div[data-path$='Files'],
+    div[data-path$='Files']+div.nav-folder-children {
+      display: none;
+    }
+
+    div[data-path$='Templates'],
+    div[data-path$='Templates']+div.nav-folder-children {
+      display: none;
+    }
+
+    /* Hide an extension
+div[data-path$='.png']{
+	display: none;
+} */
+
+
+
+    /* --- custom-fonts.css --- */
+    /* Hides the window frame buttons */
+
+    body .titlebar-button.mod-minimize,
+    body .titlebar-button.mod-maximize,
+    body .titlebar-button.mod-close {
+      display: none;
+    }
+
+
+    .block-language-dataview {
+      display: block;
+      max-height: 5t00px;
+      overflow: auto;
+    }
+
+    .block-language-dataviewjs {
+      display: block;
+      height: 500px;
+      overflow: auto;
+    }
+
+
+    /* --- Custom tag styles.css --- */
+    /* Hides the Vaults Title */
+
+    .nav-folder.mod-root>.nav-folder-title .nav-folder-title-content {
+      display: none;
+      color: var(--text-muted);
+      font-size: var(--small-font-size);
+      text-transform: uppercase;
+      margin-left: -2px;
+    }
+
+    .nav-folder.mod-root>.nav-folder-title:hover {
+      color: none;
+      cursor: pointer;
+    }
+
+
+
+
+    /* --- Compact file explorer.css --- */
 
     /*active line for background-color: #222927 #1C2F2A82;*/
 
@@ -25364,6 +25391,11 @@ div[data-path$='.png']{
       /* padding-right: 0px !important; */
       display: none;
       /* padding-bottom: 2px; */
+    }
+
+    .markdown-rendered .cm-fold-indicator .collapse-indicator,
+    .collapse-icon {
+      display: flex;
     }
 
     /* .markdown-source-view.mod-cm6 .cm-editor { */
@@ -26280,7 +26312,7 @@ div[data-path$='.png']{
 
 </head>
 
-<body class="mod-windows is-frameless is-hidden-frameless obsidian-app contextual-typography hider-ribbon hider-scroll outliner-plugin-dnd css-settings-manager minimal-theme minimal-dracula-dark minimal-default-light colorful-headings img-grid minimal-status-off minimal-folding minimal-line-nums minimal-readable-off minimal-light minimal-dark chart-wide table-default-width img-wide iframe-default-width map-default-width obsidian-themepocalypse style-check-box unified-cm-highlighting cm-theme-custom qe-title-right pane-relief-pane-numbering pane-relief-disable-counts callouts-outlined trim-cols checkbox-square pdf-seamless-on pdf-invert-dark pdf-blend-light sidebar-tabs-index maximize-tables-auto col-lines table-numbers row-hover tabs-modern tab-stack-center-flipped minimal-tab-title-hover hider-tabs is-maximized theme-dark" style="--zoom-factor:1; --accent-h:339; --accent-s:49%; --accent-l:46%; --font-interface-override:Bahnschrift; --font-text-override:Orienta, MonoLisa; --font-print-override:Orienta, MonoLisa; --font-monospace-override:Gintroniclisa, Gintronic, Monolisa; --font-text-size:15px; --line-width:50em; --line-width-adaptive:50em; --file-line-width:50em; --content-width:500em; --sidebar-width:25em; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;">
+<body class="mod-windows is-frameless is-hidden-frameless obsidian-app contextual-typography hider-ribbon hider-scroll outliner-plugin-dnd css-settings-manager minimal-theme minimal-dracula-dark minimal-default-light colorful-headings img-grid minimal-status-off minimal-folding minimal-line-nums minimal-readable-off minimal-light minimal-dark chart-wide table-default-width img-wide iframe-default-width map-default-width obsidian-themepocalypse style-check-box unified-cm-highlighting hider-tabs is-maximized theme-dark cm-theme-custom qe-title-right pane-relief-pane-numbering pane-relief-disable-counts callouts-outlined trim-cols checkbox-square pdf-seamless-on pdf-invert-dark pdf-blend-light sidebar-tabs-index maximize-tables-auto col-lines table-numbers row-hover tabs-modern tab-stack-center-flipped minimal-tab-title-hover" style="--zoom-factor:1; --accent-h:339; --accent-s:49%; --accent-l:46%; --font-interface-override:Bahnschrift; --font-text-override:Orienta, MonoLisa; --font-print-override:Orienta, MonoLisa; --font-monospace-override:Gintroniclisa, Gintronic, Monolisa; --font-text-size:15px; --line-width:50em; --line-width-adaptive:50em; --file-line-width:50em; --content-width:500em; --sidebar-width:25em; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;">
   <div class="webpage-container">
     <div class="sidebar-left sidebar">
       <div class="sidebar-content"></div>
@@ -26384,7 +26416,7 @@ div[data-path$='.png']{
                 <div class="list-bullet"></div>
                 <div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
                     <path d="M3 8L12 17L21 8"></path>
-                  </svg></div>El personaje diplomático (de aquí en adelante <a data-href="#Medium" href="#Medium" class="internal-link" target="_self" rel="noopener">Medium</a>) provee coordenadas, guía en favor no de la función acordada del juego como finalidad preescrita sino como un mediador que cuida la relación entre los participantes y las materias con las que aún no se ha entrado en contacto. <a data-href="#Medium" href="#Medium" class="internal-link" target="_self" rel="noopener">Medium</a> tiene el trabajo de sostener el tiempo ritual del juego, lo que usualmente significará recordar, reorientar y volver a lo pequeño. <a data-href="#Medium" href="#Medium" class="internal-link" target="_self" rel="noopener">Medium</a> incurre en una práctica de amplificación que recupera la sensación de escala narrativa en cada momento en que las herramientas del dispositivo parecen disolver aquello que previamente se había fijado como los límites de lo posible.
+                  </svg></div><a data-href="#Medium" href="#Medium" class="internal-link" target="_self" rel="noopener">Medium</a> provee coordenadas, guía en favor no de la función acordada del juego como finalidad preescrita sino como un mediador que cuida la relación entre los participantes y las materias con las que aún no se ha entrado en contacto. <a data-href="#Medium" href="#Medium" class="internal-link" target="_self" rel="noopener">Medium</a> tiene el trabajo de sostener el tiempo ritual del juego, lo que usualmente significará recordar, reorientar y volver a lo pequeño. <a data-href="#Medium" href="#Medium" class="internal-link" target="_self" rel="noopener">Medium</a> incurre en una práctica de amplificación que recupera la sensación de escala narrativa en cada momento en que las herramientas del dispositivo parecen disolver aquello que previamente se había fijado como los límites de lo posible.
                 <ul class="has-list-bullet">
                   <li data-line="1">
                     <div class="list-bullet"></div><a data-href="Lepecki" href="Lepecki" class="internal-link is-unresolved" target="_self" rel="noopener">Lepecki</a> - Desde el punto de vista de las pequeñas percepciones, todo soporta el cambio, la inmovilidad deviene movimiento
